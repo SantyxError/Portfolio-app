@@ -1,7 +1,12 @@
 <div class="card">
   <img clas="image" [src]="dataEntrante?.img" alt="image" />
   <div class="wrapper-text">
-    <div class="title">{{dataEntrante?.title}}</div>
-    <div class="sub-title">{{dataEntrante?.subtitle}}</div>
+    <div class="title">{{ dataEntrante?.title }}</div>
+    <div class="sub-title">{{ dataEntrante?.subtitle }}</div>
+  </div>
+  <div>
+    <button class="favorite" (click)="agregarFavorito()">
+      Add favorite
+    </button>
   </div>
 </div>

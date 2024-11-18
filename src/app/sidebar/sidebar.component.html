@@ -1,1 +1,16 @@
-<p>sidebar works!</p>
+<div>
+  <h3 class="title">Lista de favoritos</h3>
+</div>
+<div class="divider"></div>
+<div>
+  <ul class="favorite-list">
+    <li *ngFor="let video of listDeVideos">
+      <div class="card">
+        <img [src]="video?.data?.img" alt="" class="mini-image" />
+      </div>
+      <div>
+        <div class="title-inside">{{ video?.data?.title }}</div>
+      </div>
+    </li>
+  </ul>
+</div>
