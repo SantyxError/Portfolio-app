@@ -1,0 +1,7 @@
+<div *ngIf="respuesta">
+  <h1>{{ respuesta.title }}</h1>
+  <img [src]="respuesta.image" alt="Post Image" class="post-image" />
+  <p>{{ respuesta.subtitle }}</p>
+  <p><strong>Views:</strong> {{ respuesta.views }}</p>
+  <p><strong>Author:</strong> {{ respuesta.author.name }}</p>
+</div>

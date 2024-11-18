@@ -11,6 +11,8 @@ import {
   withInterceptorsFromDi,
 } from '@angular/common/http';
 import { AuthInterceptor } from './auth.interceptor';
+import { PostDetailComponent } from './post-detail/post-detail.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { AuthInterceptor } from './auth.interceptor';
     HeaderComponent,
     CardComponent,
     SidebarComponent,
+    PostDetailComponent,
+    HomeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   bootstrap: [AppComponent],
