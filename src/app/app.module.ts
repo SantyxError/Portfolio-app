@@ -13,6 +13,7 @@ import {
 import { AuthInterceptor } from './auth.interceptor';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { HomeComponent } from './home/home.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,13 +24,13 @@ import { HomeComponent } from './home/home.component';
     PostDetailComponent,
     HomeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   bootstrap: [AppComponent],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
-      multi: true, 
+      multi: true,
     },
     provideHttpClient(withInterceptorsFromDi()),
   ],

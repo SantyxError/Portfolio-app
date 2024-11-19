@@ -16,10 +16,11 @@ export class CardComponent implements OnInit {
     this.image = 'https://picsum.photos/536/354';
   }
 
-  agregarFavorito() {
-    console.log(this.dataEntrante);
+  agregarFavorito(event: Event): void {
+    event.stopPropagation(); 
+    console.log('Añadiendo a favoritos:', this.dataEntrante);
     this.servicioFavorito.disparadorDeFavoritos.emit({
-      data:this.dataEntrante
+      data: this.dataEntrante,
     });
   }
 }

@@ -7,7 +7,11 @@ import { HttpClient } from '@angular/common/http';
 export class RestService {
   constructor(private http: HttpClient) {}
 
-  getData() {
-    return this.http.get<any>('assets/data.json');
+  get(url: string) {
+    return this.http.get<any>(url);
+  }
+
+  post(url: string, body: any) {
+    return this.http.post<any>(url, body);
   }
 }

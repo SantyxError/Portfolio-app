@@ -10,7 +10,17 @@
       "author": {
         "name": "Leifer Mendez",
         "author": ""
-      }
+      },
+      "comments": [
+        {
+          "author": "Leifer Mendez",
+          "text": "¡Muy buen tutorial, lo explicas de manera muy clara!"
+        },
+        {
+          "author": "Carlos Pérez",
+          "text": "Gracias por compartirlo, lo voy a poner en práctica."
+        }
+      ]
     },
     {
       "id": 2,
@@ -22,7 +32,13 @@
       "author": {
         "name": "Leifer Mendez",
         "author": ""
-      }
+      },
+      "comments": [
+        {
+          "author": "Ana González",
+          "text": "Excelente video, muy útil para principiantes."
+        }
+      ]
     },
     {
       "id": 3,
@@ -34,7 +50,13 @@
       "author": {
         "name": "Leifer Mendez",
         "author": ""
-      }
+      },
+      "comments": [
+        {
+          "author": "Juan Ramírez",
+          "text": "Muy buen contenido, pero me gustaría más ejemplos prácticos."
+        }
+      ]
     },
     {
       "id": 4,
@@ -46,7 +68,13 @@
       "author": {
         "name": "Leifer Mendez",
         "author": ""
-      }
+      },
+      "comments": [
+        {
+          "author": "Roberto Martínez",
+          "text": "El video es claro, pero la calidad del audio podría mejorar."
+        }
+      ]
     },
     {
       "id": 5,
@@ -58,7 +86,8 @@
       "author": {
         "name": "Leifer Mendez",
         "author": ""
-      }
+      },
+      "comments": []
     }
   ],
   "comments": [],

@@ -16,7 +16,7 @@ export class HomeComponent {
   }
 
   cargarData() {
-    this.restService.getData().subscribe(
+    this.restService.get('assets/data.json').subscribe(
       (data) => {
         this.listDeVideos = data.posts;
         console.log(this.listDeVideos);

@@ -1,10 +1,8 @@
 <div class="card">
-  <img clas="image" [src]="dataEntrante?.image" alt="image" />
-  <div class="wrapper-text">
-    <div class="title">{{ dataEntrante?.title }}</div>
-    <div class="sub-title">{{ dataEntrante?.subtitle }}</div>
-  </div>
-  <div>
-    <button class="favorite" (click)="agregarFavorito()">Add favorite</button>
+  <img [src]="dataEntrante.image || image" alt="Imagen de la tarjeta" />
+  <div class="card-body">
+    <h5>{{ dataEntrante.title }}</h5>
+    <p>{{ dataEntrante.subtitle }}</p>
+    <button (click)="agregarFavorito($event)">Add Favorite</button>
   </div>
 </div>

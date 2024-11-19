@@ -1,7 +1,45 @@
-<div *ngIf="respuesta">
-  <h1>{{ respuesta.title }}</h1>
-  <img [src]="respuesta.image" alt="Post Image" class="post-image" />
-  <p>{{ respuesta.subtitle }}</p>
-  <p><strong>Views:</strong> {{ respuesta.views }}</p>
-  <p><strong>Author:</strong> {{ respuesta.author.name }}</p>
+<app-header></app-header>
+<div class="wrapper">
+  <div class="block-one">
+    <div>
+      <img class="image-video" [src]="respuesta?.image" alt="" />
+    </div>
+    <div class="wrapper-info">
+      <div class="title">{{ respuesta?.title }}</div>
+      <div class="subtitle">{{ respuesta?.subtitle }}</div>
+      <div class="date">1490 visualizaciones•22 jun 2020</div>
+    </div>
+  </div>
+  <div class="block-two">
+    <div>
+      <ul class="comment-list">
+        <li *ngFor="let detalleComentario of comentarios">
+          <div class="author">
+            <img
+              class="avatar"
+              src="https://avatars.githubusercontent.com/u/96107344?s=400&u=bb9ab5097cdd4b0705ed7b5c5743828514d10b56&v=4"
+              alt=""
+            />
+          </div>
+          <div class="content">
+            <b><div>SantyxError</div></b> {{ detalleComentario?.text }}
+          </div>
+        </li>
+      </ul>
+      <div>
+        <form [formGroup]="form!" (submit)="enviarData()">
+          <div class="form-group">
+            <label for="commentArea" class="title-comment">Comentar</label>
+            <textarea
+              formControlName="textAreaComentario"
+              class="text-comment"
+              id="commentArea"
+              rows="8"
+            ></textarea>
+            <button class="button" type="submit">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
