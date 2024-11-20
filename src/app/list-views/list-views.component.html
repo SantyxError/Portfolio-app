@@ -1,0 +1,34 @@
+<app-header></app-header>
+<div>
+  <h3 class="table">Live Data Demo</h3>
+  <ngx-datatable
+    class="material"
+    [rows]="filteredData"
+    [columns]="cols"
+    [columnMode]="ColumnMode.force"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    rowHeight="auto"
+  >
+  </ngx-datatable>
+
+  <ng-template #hdrTpl let-column="column">
+    <div class="header" (click)="onHeaderClick(column)">
+      {{ column.name }}
+      <span *ngIf="filters[column.name] === 'asc'">🔼</span>
+      <span *ngIf="filters[column.name] === 'desc'">🔽</span>
+    </div>
+  </ng-template>
+
+  <ng-template #imageTmpl let-row="row" let-value="value">
+    <img class="video-image" [src]="value" alt="Image" />
+  </ng-template>
+
+  <ng-template #titleTmpl let-row="row" let-value="value">
+    <div class="title">{{ value }}</div>
+  </ng-template>
+
+  <ng-template #viewTmpl let-row="row" let-value="value">
+    <div>{{ value }}</div>
+  </ng-template>
+</div>

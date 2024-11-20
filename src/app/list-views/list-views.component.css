@@ -1,0 +1,99 @@
+.list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h3.table {
+  text-align: center; 
+  margin-bottom: 20px;
+}
+
+
+ngx-datatable {
+  width: 100%; 
+  max-width: 1200px;
+  margin: 0 auto; 
+}
+
+div.no-data {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #888;
+}
+
+.video-image {
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.title,
+.subtitle {
+  text-align: center;
+  margin: 5px 0;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.subtitle {
+  color: #555;
+}
+
+.sort-icon {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.asc {
+  color: green;
+}
+
+.desc {
+  color: red;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
+.header-container input {
+  margin-left: 8px;
+  padding: 5px;
+  width: 120px;
+  font-size: 14px;
+}
+
+.filter-input {
+  font-size: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.video-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.header span {
+  margin-left: 5px;
+  font-size: 12px;
+  color: gray;
+}

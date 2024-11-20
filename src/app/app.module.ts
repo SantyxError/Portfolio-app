@@ -13,7 +13,9 @@ import {
 import { AuthInterceptor } from './auth.interceptor';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { HomeComponent } from './home/home.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListViewsComponent } from './list-views/list-views.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
   declarations: [
@@ -23,8 +25,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     SidebarComponent,
     PostDetailComponent,
     HomeComponent,
+    ListViewsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    NgxDatatableModule,
+    FormsModule,
+  ],
   bootstrap: [AppComponent],
   providers: [
     {
