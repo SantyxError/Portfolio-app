@@ -6,7 +6,7 @@
 
 .menu {
   margin: 0;
-  padding: 0;
+  padding: 10px 30px;
   display: flex;
   list-style: none;
   justify-content: space-between;
@@ -26,4 +26,8 @@
   font-weight: 600;
   padding: 0.5rem;
   text-align: center;
+}
+
+li a {
+  text-decoration: none;
 }

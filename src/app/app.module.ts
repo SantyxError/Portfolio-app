@@ -16,6 +16,8 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListViewsComponent } from './list-views/list-views.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { LoginComponent } from './login/login.component';
+import { CookieService } from 'ngx-cookie-service'; 
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     PostDetailComponent,
     HomeComponent,
     ListViewsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
   ],
   bootstrap: [AppComponent],
   providers: [
+    CookieService, 
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

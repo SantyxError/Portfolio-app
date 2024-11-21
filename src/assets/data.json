@@ -8,8 +8,7 @@
       "status": "public",
       "views": 124124214,
       "author": {
-        "name": "Leifer Mendez",
-        "author": ""
+        "name": "Leifer Mendez"
       },
       "comments": [
         {
@@ -30,8 +29,7 @@
       "status": "public",
       "views": 1432423411,
       "author": {
-        "name": "Leifer Mendez",
-        "author": ""
+        "name": "Leifer Mendez"
       },
       "comments": [
         {
@@ -48,8 +46,7 @@
       "status": "public",
       "views": 132123,
       "author": {
-        "name": "Leifer Mendez",
-        "author": ""
+        "name": "Leifer Mendez"
       },
       "comments": [
         {
@@ -66,8 +63,7 @@
       "status": "public",
       "views": 32,
       "author": {
-        "name": "Leifer Mendez",
-        "author": ""
+        "name": "Leifer Mendez"
       },
       "comments": [
         {
@@ -84,19 +80,9 @@
       "status": "public",
       "views": 100,
       "author": {
-        "name": "Leifer Mendez",
-        "author": ""
+        "name": "Leifer Mendez"
       },
       "comments": []
     }
-  ],
-  "comments": [],
-  "users": [
-    {
-      "email": "leifer33@gmail.com",
-      "password": "$2a$10$Uc6Nmjt82gxlAt0umMtxpug2X.OapxZqEesH8leydtkkfKyX8bvq6",
-      "id": 1
-    }
-  ],
-  "files": []
+  ]
 }
