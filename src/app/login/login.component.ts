@@ -1,52 +1,39 @@
-import { CookieService } from 'ngx-cookie-service';
-import { RestService } from './../rest.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { RestService } from '../rest.service';
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router'; // Importa Router
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit {
-  public form!: FormGroup;
+export class LoginComponent {
+  form: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder,
-    private RestService: RestService,
+    private fb: FormBuilder,
+    private restService: RestService,
     private cookieService: CookieService,
-    private router: Router
-  ) {}
-
-  ngOnInit(): void {
-    this.form = this.formBuilder.group({
+    private router: Router // Inyecta Router
+  ) {
+    this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]],
+      password: ['', Validators.required],
     });
   }
 
-  enviarDatos(): void {
-    if (this.form.valid) {
-      this.RestService.validateLogin(
-        this.form.value.email,
-        this.form.value.password
-      ).subscribe(
-        (res: any) => {
-          if (res.success) {
-            console.log('Login Exitoso!!');
-            this.cookieService.set('token_access', 'dummy_token', 4, '/');
-            this.router.navigate(['/']);
-          } else {
-            console.error('Credenciales incorrectas');
-          }
-        },
-        (err) => {
-          console.error('Error en el login:', err);
-        }
-      );
-    } else {
-      console.error('Formulario no válido');
-    }
+  enviarDatos() {
+    const { email, password } = this.form.value;
+    this.restService.validateLogin(email, password).subscribe((result) => {
+      if (result.success) {
+        alert(`Bienvenido ${result.user.name}`);
+        this.cookieService.set('token_access', email); // Guarda el token
+        this.router.navigate(['/']); // Redirige al inicio
+      } else {
+        alert('Credenciales incorrectas');
+      }
+    });
   }
 }

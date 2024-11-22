@@ -1,25 +1,32 @@
 <div class="header">
-  <ul class="menu">
-    <li class="logo-container">
-      <!-- Se usa routerLink="/" para redirigir a la página principal -->
-      <a routerLink="/">
-        <img
-          class="logo"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/1280px-Logo_of_YouTube_%282015-2017%29.svg.png"
-          alt="logo"
-        />
-      </a>
-    </li>
-    <li>
-      <!-- Link a la página de "Mis videos" -->
-      <a [routerLink]="'/list-views'">Lista de Videos</a>
-    </li>
-    <li>Más vistos</li>
-    <li>Subir video</li>
-    <li>
-      <!-- Link a la página de login -->
-      <a routerLink="/login">Iniciar sesión</a>
-    </li>
-  </ul>
-  <hr />
+  <!-- Contenedor para el logo -->
+  <div class="logo-container">
+    <a routerLink="/">
+      <img
+        class="logo"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/1280px-Logo_of_YouTube_%282015-2017%29.svg.png"
+        alt="Logo"
+      />
+    </a>
+  </div>
+
+  <!-- Contenedor para los enlaces del menú -->
+  <div class="menu-container">
+    <ul class="menu">
+      <li>
+        <a routerLink="/list-videos">Lista de Videos</a>
+      </li>
+      <li>Más vistos</li>
+      <li>Subir Video</li>
+      <li>
+        <ng-container *ngIf="!cookieService.get('token_access'); else loggedIn">
+          <a routerLink="/login">Iniciar sesión</a>
+        </ng-container>
+        <ng-template #loggedIn>
+          <span class="logout" (click)="logout()">Cerrar sesión</span>
+        </ng-template>
+      </li>
+    </ul>
+  </div>
 </div>
+<hr />

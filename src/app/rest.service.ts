@@ -18,21 +18,17 @@ export class RestService {
   }
 
   getUsers(): Observable<any> {
-    return this.http.get<any>('assets/login.json'); // Obtener los usuarios desde el archivo JSON
+    return this.http.get<any>('assets/login.json'); // Ruta al archivo
   }
 
-  // Comprobar las credenciales
+  // Validar credenciales ingresadas
   validateLogin(email: string, password: string): Observable<any> {
     return this.getUsers().pipe(
       map((data) => {
-        const user = data.users.find((user: any) => user.email === email);
-
-        // Si se encuentra el usuario, se compara la contraseña encriptada
-        if (user && bcrypt.compareSync(password, user.password)) {
-          return { success: true, user };
-        } else {
-          return { success: false };
-        }
+        const user = data.users.find(
+          (user: any) => user.email === email && user.password === password
+        );
+        return user ? { success: true, user } : { success: false };
       })
     );
   }

@@ -17,7 +17,7 @@ const routes: Routes = [
   },
   { path: 'post/:id', component: PostDetailComponent },
   {
-    path: 'list-views',
+    path: 'list-videos',
     component: ListViewsComponent,
     canActivate: [VigilanteGuard],
   },

@@ -1,80 +1,88 @@
-.wrapper {
-  max-width: 500px;
-  margin: 0 auto;
+/* General container */
+div {
+  max-width: 400px;
+  margin: 50px auto;
   padding: 20px;
-  background-color: #fff;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  background-color: #fff;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.h2 {
+/* Form title */
+h1 {
   text-align: center;
+  font-size: 24px;
   color: #333;
+  margin-bottom: 20px;
 }
 
-.label {
+/* Labels */
+label {
+  display: block;
   font-weight: bold;
+  margin-bottom: 8px;
   color: #555;
 }
 
-.input-form {
+/* Inputs */
+input {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
   border-radius: 4px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
   transition: border-color 0.3s ease;
 }
 
-.input-form:focus {
+/* Input focus effect */
+input:focus {
   border-color: #007bff;
   outline: none;
 }
 
-.button {
-  padding: 12px 20px;
+/* Error messages */
+small {
+  color: #e74c3c;
+  font-size: 12px;
+  display: block;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+/* Submit button */
+button {
+  width: 100%;
+  padding: 10px;
   background-color: #007bff;
   color: #fff;
+  font-size: 16px;
+  font-weight: bold;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.button:hover {
-  background-color: #0056b3;
-}
-
-.button:disabled {
+button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
-.error-message {
-  color: #e74c3c;
-  font-size: 0.875rem;
-  margin-top: 5px;
+button:hover:not(:disabled) {
+  background-color: #0056b3;
 }
 
-@media (max-width: 768px) {
-  .wrapper {
+/* Small adjustments for responsiveness */
+@media (max-width: 600px) {
+  div {
     padding: 15px;
   }
 
-  .form {
-    gap: 15px;
-  }
-
-  .input-form {
-    padding: 10px;
-  }
-
-  .button {
-    padding: 10px 15px;
+  h1 {
+    font-size: 20px;
   }
 }
